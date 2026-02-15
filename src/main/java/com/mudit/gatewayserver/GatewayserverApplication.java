@@ -30,11 +30,9 @@ public class GatewayserverApplication {
                         .path("/bank/cards/**")
                         .filters(f ->
                                 f.rewritePath("/bank/cards/(?<segment>.*)", "/${segment}"))
-                        .uri("lb://CARDS")).build();
-
-
+                        .uri("lb://CARDS"))
+                .build();
     }
-
 }
 
 
